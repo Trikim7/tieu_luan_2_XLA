@@ -4,15 +4,6 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)](https://opencv.org)
 [![PyQt5](https://img.shields.io/badge/PyQt5-GUI-orange.svg)](https://pypi.org/project/PyQt5/)
 
-## 📋 Mục tiêu tiểu luận
-
-Tiểu luận này nhằm nghiên cứu và triển khai các bộ lọc xử lý ảnh trong thị giác máy tính, bao gồm:
-
-- **Hiểu bản chất toán học** của các bộ lọc ảnh tuyến tính và phi tuyến tính
-- **Cài đặt, so sánh, tối ưu** và áp dụng trong các bài toán thực tế
-- **Phân tích định lượng** hiệu quả các bộ lọc qua các chỉ số PSNR, SSIM
-- **Xây dựng ứng dụng thực tế** với giao diện người dùng trực quan
-
 ## 🎯 Nội dung các bài tập
 
 ### Bài 1 - So sánh và phân tích các bộ lọc làm mờ
@@ -81,26 +72,26 @@ Tiểu luận này nhằm nghiên cứu và triển khai các bộ lọc xử l�
 
 **Kết quả mong đợi:**
 
-- Một phần mềm nhỏ "Photo Editor bằng Python"
+- "Mini Photo Editor bằng Python"
 
 ## 🚀 Cài đặt và sử dụng
 
 ### Yêu cầu hệ thống
 
 ```
-Python 3.8+
+Python 3.10+
 OpenCV 4.x
 NumPy
 Matplotlib
 scikit-image
-PyQt5 (cho GUI)
+PyQt5
 ```
 
 ### Cài đặt dependencies
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/Trikim7/tieu_luan_2_XLA.git
 cd tieu_luan_2
 
 # Cài đặt packages
@@ -117,21 +108,16 @@ python -m src.app
 ### Chạy Jupyter Notebook
 
 ```bash
-# Mở notebook để xem phân tích chi tiết
 jupyter notebook notebooks/tieu_luan_2.ipynb
 ```
 
-## 📁 Cấu trúc project
+## 📁 Cấu trúc tiểu luận
 
 ```
 tieu_luan_2/
-├── README.md                    # Tài liệu hướng dẫn
+├── README.md                    # Hướng dẫn
 ├── requirements.txt             # Dependencies
 ├── data/                        # Thư mục chứa ảnh test
-│   ├── lena.jpg                # Ảnh chuẩn để test
-│   ├── van_ban.jpg             # Ảnh văn bản
-│   ├── mo4.jpg                 # Ảnh mờ
-│   └── MRI_brain.jpg           # Ảnh y tế
 ├── notebooks/
 │   └── tieu_luan_2.ipynb       # Notebook phân tích chi tiết
 └── src/                        # Source code
@@ -163,7 +149,13 @@ tieu_luan_2/
 
 ```
 Ảnh mờ/tối → Histogram Equalization → Unsharp Masking → Ảnh sắc nét
+
 ```
+
+### 4. Bộ lọc trong xử lý ảnh y tế
+
+- Gaussian smoothing giúp giảm nhiễu hạt, Sobel cung cấp biên kém mượt hơn Canny, Canny tạo đường biên liên tục cho vùng nghi ngờ.
+- Ảnh minh họa trước/sau lọc được lưu trữ trong các ô mã Python tương ứng.
 
 ## 🎨 Giao diện ứng dụng
 
@@ -192,5 +184,3 @@ tieu_luan_2/
 4. scikit-image Documentation
 
 ---
-
-*Tiểu luận được thực hiện trong môn Xử lý ảnh - Image Processing*
